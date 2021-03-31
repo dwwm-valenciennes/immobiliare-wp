@@ -10730,6 +10730,13 @@ textarea.form-control-lg {
 }
 body {
   background-color: #edf2f7;
+  font-family: "Nunito", sans-serif;
+}
+
+.post-thumbnail {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

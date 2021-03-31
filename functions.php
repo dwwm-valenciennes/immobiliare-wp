@@ -1,6 +1,8 @@
 <?php
 
 function my_theme_enqueue_styles() {
+    // Police Nunito
+    wp_enqueue_style('nunito', 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
     // href="styles/style.css?v=< ?= time(); ? >" ==> Evite le cache du navigateur
     wp_enqueue_style('style', get_template_directory_uri().'/assets/css/style.css', [], time());
 
