@@ -1,0 +1,8 @@
+// Grâce au Scss, on peut customiser Bootstrap facilement
+$primary: #38b2ac;
+// Permet d'importer Bootstrap dans notre code
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+body {
+    background-color: #edf2f7;
+}
