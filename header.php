@@ -16,16 +16,18 @@
     <?php wp_head(); ?>
 </head>
 <body>
+    <!-- <h1>Type de page actuelle: <?php echo get_post_type(); ?></h1> -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= home_url(); ?>">
                 <?php bloginfo('name'); ?>
                 <span class="site-description"><?php bloginfo('description'); ?></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <?php
                 // On affiche le menu attaché à l'emplacement 'main-menu'
@@ -38,25 +40,6 @@
                     'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
                     'walker' => new WP_Bootstrap_Navwalker()
                 ]); ?>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
 
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search">
