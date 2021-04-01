@@ -26,5 +26,6 @@ et horizontalement). */
 </div>
 
 <div class="container">
+    <?php the_content(); // Le contenu de la page
 
-<?php get_footer(); ?>
+get_footer(); ?>
