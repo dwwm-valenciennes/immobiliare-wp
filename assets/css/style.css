@@ -10739,4 +10739,9 @@ body {
   object-fit: cover;
 }
 
+.site-description {
+  display: block;
+  font-size: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */

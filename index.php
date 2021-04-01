@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
-
     <?php
     // Si on est sur une catégorie, on affiche son titre
     if (is_category()) : ?>
