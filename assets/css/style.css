@@ -10744,4 +10744,27 @@ body {
   font-size: 10px;
 }
 
+.banner {
+  position: relative;
+  height: 300px;
+}
+.banner:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.banner h1, .banner .h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  width: 100%;
+  color: #fff;
+}
+.banner .post-thumbnail {
+  height: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */
