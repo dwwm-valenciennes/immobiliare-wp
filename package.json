@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dwwm-valenciennes/immobiliare-wp#readme",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3"
+    "bootstrap": "^5.0.0-beta3",
+    "slick-carousel": "^1.8.1"
   }
 }

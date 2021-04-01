@@ -26,6 +26,20 @@ et horizontalement). */
 </div>
 
 <div class="container">
+    <div id="toto">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        jQuery('#toto').slick();
+    }
+</script>
+
+<div class="container">
     <?php the_content(); // Le contenu de la page
 
 get_footer(); ?>
