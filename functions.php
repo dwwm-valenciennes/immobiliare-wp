@@ -14,6 +14,8 @@ function my_theme_enqueue_styles() {
     // On intègre aussi le JS de Bootstrap
     // Le dernier paramètre "true" permet de mettre le JS dans le footer (avant la fin de body)
     wp_enqueue_script('bootstrap', get_template_directory_uri().'/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', [], false, true);
+    // Notre script JS
+    wp_enqueue_script('script', get_template_directory_uri().'/assets/js/script.js', ['jquery'], false, true);
 }
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
