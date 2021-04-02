@@ -64,3 +64,48 @@ body {
         object-fit: cover;
     }
 }
+
+.properties {
+    .card-img-top {
+        height: 275px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .card {
+        border: 0;
+        border-radius: 10px;
+        margin: -25px 15px 0;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .star svg {
+        color: #e2e8f0;
+        fill: currentColor;
+        width: 16px;
+        height: 16px;
+    }
+
+    .star.green svg {
+        color: $primary;
+    }
+
+    .badge.bg-success {
+        background-color: $primary !important;
+        border-radius: 50px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    .features {
+        font-size: 12px;
+    }
+}

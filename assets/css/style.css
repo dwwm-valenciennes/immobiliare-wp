@@ -10784,4 +10784,40 @@ body {
   object-fit: cover;
 }
 
+.properties .card-img-top {
+  height: 275px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.properties .card {
+  border: 0;
+  border-radius: 10px;
+  margin: -25px 15px 0;
+}
+.properties .card-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.properties .star svg {
+  color: #e2e8f0;
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+.properties .star.green svg {
+  color: #38b2ac;
+}
+.properties .badge.bg-success {
+  background-color: #38b2ac !important;
+  border-radius: 50px;
+}
+.properties .badge.bg-success a {
+  color: #fff;
+  text-decoration: none;
+}
+.properties .features {
+  font-size: 12px;
+}
+
 /*# sourceMappingURL=style.css.map */

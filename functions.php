@@ -56,6 +56,55 @@ function register_my_cpt() {
         'show_in_rest' => true, // Si on veut activer Gutenberg
         'menu_icon' => 'dashicons-portfolio',
     ]);
+
+    register_post_type('property', [
+        'label' => 'Annonces',
+        'labels' => [
+            'name' => 'Annonces',
+            'singular_name' => 'Annonce',
+            'all_items' => 'Toutes les annonces',
+            'add_new_item' => 'Ajouter une annonce',
+            'edit_item' => 'Éditer l\'annonce',
+            'new_item' => 'Nouvelle annonce',
+            'view_item' => 'Voir l\'annonce',
+            'search_items' => 'Rechercher parmi les annonces',
+            'not_found' => 'Pas d\'annonce trouvé',
+            'not_found_in_trash' => 'Pas d\'annonce dans la corbeille'
+        ],
+        'public' => true,
+        'supports' => ['title', 'editor', 'author', 'thumbnail', 'custom-fields'],
+        'has_archive' => true,
+        'show_in_rest' => true, // Si on veut activer Gutenberg
+        'menu_icon' => 'dashicons-admin-multisite',
+    ]);
+
+    register_taxonomy('property-type', 'property', [
+        'labels' => [
+            'name' => 'Types',
+            'singular_name' => 'Type',
+            'all_items' => 'Tous les types',
+            'edit_item' => 'Éditer le type',
+            'view_item' => 'Voir le type',
+            'update_item' => 'Mettre à jour le type',
+            'add_new_item' => 'Ajouter un type',
+            'new_item_name' => 'Nouveau type',
+            'search_items' => 'Rechercher parmi les types',
+            'popular_items' => 'Types les plus utilisés'
+        ],
+        'hierarchical' => true,
+        'show_in_rest' => true, // Pour Gutenberg
+    ]);
 }
 
 add_action( 'init', 'register_my_cpt' );
+
+/**
+ * Annonces immo
+ *
+ * - Créer un nouveau custom post type pour les annonces immo
+ * - Créer quelques annonces immo (https://workcation.netlify.app/)
+ * - Intégrer la page d'archives des annonces immo (Pas de tri par ville mais toutes les annonces pour l'instant)
+ * - On a 4 champs customs: Bed, Bath, Price et Note.
+ * - Bonus et idéalement: on créera une taxonomy Type pour ranger chaque annonce dans son type de bien
+ *   Studio, T2, T3, T4, Maison... Ce qui apparaitra à la place du PLUS sur la maquette.
+ */
