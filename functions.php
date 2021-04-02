@@ -33,3 +33,29 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+// Création d'un custom post type Project
+function register_my_cpt() {
+    register_post_type('project', [
+        'label' => 'Projets',
+        'labels' => [
+            'name' => 'Projets',
+            'singular_name' => 'Projet',
+            'all_items' => 'Tous les projets',
+            'add_new_item' => 'Ajouter un projet',
+            'edit_item' => 'Éditer le projet',
+            'new_item' => 'Nouveau projet',
+            'view_item' => 'Voir le projet',
+            'search_items' => 'Rechercher parmi les projets',
+            'not_found' => 'Pas de projet trouvé',
+            'not_found_in_trash' => 'Pas de projet dans la corbeille'
+        ],
+        'public' => true,
+        'supports' => ['title', 'editor', 'author', 'thumbnail'],
+        'has_archive' => true,
+        'show_in_rest' => true, // Si on veut activer Gutenberg
+        'menu_icon' => 'dashicons-portfolio',
+    ]);
+}
+
+add_action( 'init', 'register_my_cpt' );
