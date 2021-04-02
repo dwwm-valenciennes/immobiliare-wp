@@ -51,7 +51,7 @@ function register_my_cpt() {
             'not_found_in_trash' => 'Pas de projet dans la corbeille'
         ],
         'public' => true,
-        'supports' => ['title', 'editor', 'author', 'thumbnail'],
+        'supports' => ['title', 'editor', 'author', 'thumbnail', 'custom-fields'],
         'has_archive' => true,
         'show_in_rest' => true, // Si on veut activer Gutenberg
         'menu_icon' => 'dashicons-portfolio',
