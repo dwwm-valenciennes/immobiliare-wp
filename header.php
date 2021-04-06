@@ -39,10 +39,15 @@
                     'container_id' => 'navbarSupportedContent',
                     'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
                     'walker' => new WP_Bootstrap_Navwalker()
-                ]); ?>
+                ]);
+
+                // En PHP, une recherche ressemble à ça
+                // $result1 = SELECT * FROM product WHERE name LIKE "%iphone%"
+                // $result2 = SELECT * FROM smartphone WHERE name LIKE "%iphone%"
+                ?>
 
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <input class="form-control me-2" type="search" name="s" placeholder="Search" value="<?= $_GET['s'] ?? ''; ?>">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

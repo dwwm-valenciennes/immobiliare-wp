@@ -2,13 +2,26 @@
 
     <h1>Les annonces</h1>
 
+    <div class="mb-4">
+        <?php
+            // Le hide_empty affiche les villes même sans annonces
+            $cities = get_terms('city', ['hide_empty' => false]);
+
+            foreach ($cities as $city) { ?>
+
+                <button class="btn btn-primary"><?= $city->name; ?></button>
+
+            <?php }
+        ?>
+    </div>
+
     <div class="row properties">
         <?php while (have_posts()) : the_post();
             $image = wp_get_attachment_image_src(
                 get_post_thumbnail_id($post->ID), 'large'
             )[0] ?? null; ?>
 
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-12 filter-<?php the_ID(); ?>">
                 <img
                     class="card-img-top"
                     src="<?= $image; ?>"

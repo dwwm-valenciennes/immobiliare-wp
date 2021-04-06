@@ -11,6 +11,8 @@ function my_theme_enqueue_styles() {
 
     // Slick JS
     wp_enqueue_script('slick', get_template_directory_uri().'/node_modules/slick-carousel/slick/slick.min.js', [], false, true);
+    // Isotope JS
+    wp_enqueue_script('isotope', get_template_directory_uri().'/node_modules/isotope-layout/dist/isotope.pkgd.min.js', [], false, true);
     // On intègre aussi le JS de Bootstrap
     // Le dernier paramètre "true" permet de mettre le JS dans le footer (avant la fin de body)
     wp_enqueue_script('bootstrap', get_template_directory_uri().'/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', [], false, true);
@@ -90,6 +92,24 @@ function register_my_cpt() {
             'new_item_name' => 'Nouveau type',
             'search_items' => 'Rechercher parmi les types',
             'popular_items' => 'Types les plus utilisés'
+        ],
+        'hierarchical' => true,
+        'show_in_rest' => true, // Pour Gutenberg
+    ]);
+
+    // Les villes
+    register_taxonomy('city', 'property', [
+        'labels' => [
+            'name' => 'Villes',
+            'singular_name' => 'Ville',
+            'all_items' => 'Toutes les villes',
+            'edit_item' => 'Éditer la ville',
+            'view_item' => 'Voir la ville',
+            'update_item' => 'Mettre à jour la ville',
+            'add_new_item' => 'Ajouter une ville',
+            'new_item_name' => 'Nouvelle ville',
+            'search_items' => 'Rechercher parmi les villes',
+            'popular_items' => 'Villes les plus utilisées'
         ],
         'hierarchical' => true,
         'show_in_rest' => true, // Pour Gutenberg
