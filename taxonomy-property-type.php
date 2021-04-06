@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <h1>Les annonces</h1>
+    <h1>Les annonces <?= single_term_title(); ?></h1>
 
     <div class="row properties">
         <?php while (have_posts()) : the_post();
