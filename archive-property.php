@@ -9,10 +9,14 @@
 
             foreach ($cities as $city) { ?>
 
-                <button class="btn btn-primary"><?= $city->name; ?></button>
+                <button class="btn btn-primary filter-city" data-city=".<?= $city->slug; ?>">
+                    <?= $city->name; ?>
+                </button>
 
             <?php }
         ?>
+
+        <button class="btn btn-primary filter-city" data-city="*">Voir tout</button>
     </div>
 
     <div class="row properties">
@@ -21,7 +25,7 @@
                 get_post_thumbnail_id($post->ID), 'large'
             )[0] ?? null; ?>
 
-            <div class="col-lg-3 col-md-6 col-12 filter-<?php the_ID(); ?>">
+            <div class="col-lg-3 col-md-6 col-12 <?= get_the_terms($post->ID, 'city')[0]->slug; ?>">
                 <img
                     class="card-img-top"
                     src="<?= $image; ?>"
