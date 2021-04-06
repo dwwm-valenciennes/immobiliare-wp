@@ -20,8 +20,18 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="<?= home_url(); ?>">
-                <?php bloginfo('name'); ?>
+            <a class="navbar-brand text-center" href="<?= home_url(); ?>">
+                <?php
+                    $logoId = get_theme_mod('custom_logo');
+                    $logoImg = wp_get_attachment_image_url($logoId, 'full');
+
+                // On affiche le logo s'il existe ou le nom du site
+                if ($logoImg) { ?>
+                    <img height="75" src="<?= $logoImg; ?>" alt="<?php bloginfo('name'); ?>" />
+                <?php } else {
+                    bloginfo('name');
+                } ?>
+
                 <span class="site-description"><?php bloginfo('description'); ?></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">

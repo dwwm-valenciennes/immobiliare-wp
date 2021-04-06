@@ -28,6 +28,20 @@ add_theme_support('post-thumbnails');
 // Ajouter un emplacement de menu
 register_nav_menu('main-menu', 'Menu principal');
 
+// Ajout du logo
+add_theme_support('custom-logo');
+
+// Ajout des sidebars pour le footer
+register_sidebar([
+    'id' => 'footer-1',
+    'name' => 'Footer 1',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>'
+]);
+register_sidebar(['id' => 'footer-2', 'name' => 'Footer 2']);
+register_sidebar(['id' => 'footer-3', 'name' => 'Footer 3']);
+register_sidebar(['id' => 'footer-4', 'name' => 'Footer 4']);
+
 /**
  * Register Custom Navigation Walker
  */
