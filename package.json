@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "node-sass --include-path scss assets/css/source.scss style.css",
+    "watch": "nodemon -e scss -x \"npm run css\""
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,10 @@
     "url": "https://github.com/dwwm-valenciennes/immobiliare-wp/issues"
   },
   "homepage": "https://github.com/dwwm-valenciennes/immobiliare-wp#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
     "isotope-layout": "^3.0.6",

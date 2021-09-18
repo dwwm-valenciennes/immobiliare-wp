@@ -22,6 +22,7 @@
         <div class="container">
             <a class="navbar-brand text-center" href="<?= home_url(); ?>">
                 <?php
+                    // On récupère le logo en BO
                     $logoId = get_theme_mod('custom_logo');
                     $logoImg = wp_get_attachment_image_url($logoId, 'full');
 
@@ -63,5 +64,18 @@
             </div>
         </div>
     </nav>
+
+    <div class="container text-center py-4">
+
+        <?php
+            // Si on est sur la page qui liste les annonces par ville
+            if (is_tax('city')) { ?>
+            <h1>Nos biens à <?php single_term_title(); ?></h1>
+        <?php } else { ?>
+            <h1>Bienvenue sur le site <?php bloginfo('name'); ?></h1>
+        <?php } ?>
+
+        <p><?php bloginfo('description'); ?></p>
+    </div>
 
     <div class="container">
